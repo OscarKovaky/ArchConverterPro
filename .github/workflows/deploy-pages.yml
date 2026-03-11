@@ -26,19 +26,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        shell: bash
+        run: |
+          # npm ci requiere lockfile. Si aún no existe, hacemos fallback a npm install
+          # para no bloquear el pipeline mientras se versiona package-lock.json.
+          if [[ -f package-lock.json ]]; then
+            npm ci
+          else
+            npm install --no-audit --no-fund
+          fi
 
       - name: Build Angular app for GitHub Pages
         run: npm run build:pages
 
-      # Prepara metadatos y configuración para el flujo moderno de Pages.
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      # Publica el directorio estático que luego consumirá el job de deploy.
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
