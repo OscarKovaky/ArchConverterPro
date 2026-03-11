@@ -46,6 +46,9 @@ jobs:
       - name: Build Angular app for GitHub Pages
         run: npm run build:pages
 
+      - name: Debug dist
+        run: ls -R dist
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
@@ -55,7 +58,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/NOMBRE_DEL_REPO
+          path: dist/ArchConverterPro/browser
 
   deploy:
     needs: build
