@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  # Opt-in temprano al runtime de Node.js 24 para acciones JavaScript.
+  # Evita warnings por deprecación de Node 20 en GitHub Actions.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
   pages: write
@@ -20,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
 
@@ -43,6 +48,9 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          # Crea/habilita Pages cuando todavía no está configurado en el repositorio.
+          enablement: true
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
