@@ -1,0 +1,47 @@
+:root {
+  --bg: #0b1020;
+  --surface: #131a2e;
+  --surface-alt: #1c2540;
+  --text: #edf2ff;
+  --muted: #a9b3d0;
+  --primary: #5a8cff;
+  --success: #2ec27e;
+  --danger: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #1d2850 0%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.card {
+  background: linear-gradient(145deg, var(--surface), var(--surface-alt));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input, select {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0f1424;
+  color: var(--text);
+  padding: 0.6rem;
+}
+
+.grid-2 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.small { color: var(--muted); font-size: 0.9rem; }
