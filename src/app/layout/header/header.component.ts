@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       <a routerLink="" class="brand">ArchConverterPro</a>
       <nav>
         <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
-        <a routerLink="/converters/word-to-pdf" routerLinkActive="active">Word→PDF</a>
+        <a routerLink="/converters/document-bridge" routerLinkActive="active">Document Bridge</a>
         <a routerLink="/history" routerLinkActive="active">Historial</a>
       </nav>
     </header>
