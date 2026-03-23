@@ -1,1 +1,1 @@
-export type ConversionType = 'word-to-pdf' | 'image-to-pdf' | 'excel-to-pdf';
+export type ConversionType = 'word-to-pdf' | 'pdf-to-word' | 'image-to-pdf' | 'excel-to-pdf';

@@ -14,7 +14,7 @@ import { AdSlotComponent } from '../../shared/components/ad-slot.component';
       <h1>Convierte archivos localmente</h1>
       <p class="small">Tus documentos no salen del navegador. Sin backend y sin APIs externas.</p>
       <div class="dropzone">Arrastra tu archivo .docx aquí o abre el convertidor principal.</div>
-      <button routerLink="/converters/word-to-pdf">Seleccionar archivo</button>
+      <button routerLink="/converters/document-bridge">Abrir convertidor</button>
     </section>
 
     <section class="card" style="margin-top:1rem;">
