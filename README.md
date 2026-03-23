@@ -27,3 +27,13 @@ Ver `src/app` con arquitectura por features:
 
 ## Notas
 La conversión Word→PDF se basa en render HTML intermedio y no promete fidelidad pixel-perfect respecto a Microsoft Word.
+
+## Librería interna `compat`
+Se agregó `src/app/core/compat` para parseo local en navegador con arquitectura por adaptadores:
+- detector por extensión/MIME
+- registry extensible de adapters
+- `CompatParserService.parseFile(file)`
+- salida normalizada `NormalizedDocument`
+- warnings de compatibilidad para formatos legacy (`.doc`, `.rtf`)
+- errores tipados
+- ejemplos de uso y tests básicos
